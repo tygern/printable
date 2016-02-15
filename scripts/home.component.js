@@ -6,7 +6,7 @@
             template: '<form ng-submit="$ctrl.save($ctrl.newMessage)">' +
             '<input type="text" ng-model="$ctrl.newMessage">' +
             '</form>' +
-            '<h3>{{$ctrl.message}}</h3>',
+            '<message></message>',
             controller: function (MessageService) {
                 var $ctrl = this;
 
@@ -14,11 +14,6 @@
                     MessageService.setMessage(message);
                     $ctrl.newMessage = '';
                 };
-
-                MessageService.onMessage(function (message) {
-                    $ctrl.message = message;
-                    console.log('home: ' + message)
-                });
             }
         });
 })();
